@@ -1,0 +1,35 @@
+{% macro ndsProductReordersButton(lineItem) %}
+    {% if lineItem.type == constant('Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem::PRODUCT_LINE_ITEM_TYPE') %}
+        <form action="{{ path('frontend.checkout.line-item.add') }}" method="post" data-add-to-cart="true" class="ndsReorder" id="productOrderDetailForm-{{ lineItem.id }}">
+            <input type="hidden" name="redirectTo" value="frontend.cart.offcanvas">
+
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][id]" value="{{ lineItem.identifier }}">
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][referencedId]" value="{{ lineItem.referencedId }}">
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][type]" value="{{ lineItem.type }}">
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][stackable]" value="1">
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][removable]" value="1">
+            <input type="hidden" name="lineItems[{{ lineItem.identifier }}][quantity]" value="1">
+            <input type="hidden" name="product-name" value="{{ lineItem.label }}">
+
+            <button
+                    {% if config('NdsProductReorder.config').buttonStyle == 'primary' %}
+                        class="btn btn-primary btn-lg"
+                    {% elseif config('NdsProductReorder.config').buttonStyle == 'secondary' %}
+                        class="btn btn-secondary btn-lg"
+                    {% elseif config('NdsProductReorder.config').buttonStyle == 'primarySmall' %}
+                        class="btn btn-primary btn-sm"
+                    {% elseif config('NdsProductReorder.config').buttonStyle == 'secondarySmall' %}
+                        class="btn btn-secondary btn-sm"
+                    {% elseif config('NdsProductReorder.config').buttonStyle == 'link' %}
+                        class="btn btn-link"
+                    {% else %}
+                        class="btn btn-link"
+                    {% endif %}
+
+                    title="{{ "ndsProductReorders.reorderName"|trans }}"
+                    aria-label="{{ "ndsProductReorders.reorderName"|trans }}">
+                {{ "ndsProductReorders.reorderName"|trans }}
+            </button>
+        </form>
+    {% endif %}
+{% endmacro %}

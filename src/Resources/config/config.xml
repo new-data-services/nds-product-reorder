@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Product reorders</title>
+        <title lang="de-DE">Produktnachbestellungen</title>
+        <input-field type="bool">
+            <name>active</name>
+            <label>Active</label>
+            <label lang="de-DE">Aktiv</label>
+        </input-field>
+        <input-field type="single-select">
+            <name>buttonStyle</name>
+            <label>Button Style</label>
+            <label lang="de-DE">Button Stil</label>
+            <options>
+                <option>
+                    <id>primary</id>
+                    <name>Primary</name>
+                    <name lang="de-DE">Primary</name>
+                </option>
+                <option>
+                    <id>secondary</id>
+                    <name>Secondary</name>
+                    <name lang="de-DE">Secondary</name>
+                </option>
+                <option>
+                    <id>primarySmall</id>
+                    <name>Primary (small)</name>
+                    <name lang="de-DE">Primary (klein)</name>
+                </option>
+                <option>
+                    <id>secondarySmall</id>
+                    <name>Secondary (small)</name>
+                    <name lang="de-DE">Secondary (klein)</name>
+                </option>
+                <option>
+                    <id>link</id>
+                    <name>Link</name>
+                    <name lang="de-DE">Link</name>
+                </option>
+            </options>
+            <defaultValue>link</defaultValue>
+        </input-field>
+    </card>
+</config>

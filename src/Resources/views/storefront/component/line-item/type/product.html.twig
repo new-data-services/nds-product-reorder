@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/component/line-item/type/product.html.twig' %}
+{% import '@NdsProductReorder/storefront/include/macro.html.twig' as macro %}
+
+{% set availableProducts = page.extensions.ndsReorder.availableProducts %}
+
+{% block component_line_item_type_product_downloads_table %}
+    {{ parent() }}
+    {% if config('NdsProductReorder.config').active %}
+        {% if lineItem.productId in availableProducts %}
+            {{ macro.ndsProductReordersButton(lineItem) }}
+        {% elseif lineItem.type == constant('Shopware\\Core\\Checkout\\Cart\\LineItem\\LineItem::PRODUCT_LINE_ITEM_TYPE') %}
+            <p class="ndsReorder {{ config('NdsProductReorder.config').buttonStyle == 'secondary' or config('NdsProductReorder.config').buttonStyle == 'text-secondary' ? 'text-secondary' : 'text-primary' }} %}">
+                {{ "ndsProductReorders.soldOut" | trans }}
+            </p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

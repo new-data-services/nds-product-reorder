@@ -1,0 +1,11 @@
+.ndsReorder {
+    display: flex;
+    flex-direction: row;
+}
+
+@include media-breakpoint-up(md) { 
+    .ndsReorder {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}

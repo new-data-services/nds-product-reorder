@@ -1,0 +1,52 @@
+{
+    "name": "nds/product-reorder",
+    "keywords": [],
+    "description": "Reorder products from accounts page",
+    "version": "66.1.0",
+    "type": "shopware-platform-plugin",
+    "license": "GNU General Public License v3.0",
+    "authors": [
+        {
+            "name": "new-data-services GmbH",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "shopware/core": ">=6.6.0.0-dev <6.7.0.0",
+        "shopware/administration": ">=6.6.0.0-dev <6.7.0.0",
+        "shopware/storefront": ">=6.6.0.0-dev <6.7.0.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Nds\\ProductReorder\\NdsProductReorder",
+        "copyright": "(c) by new-data-services GmbH",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "label": {
+            "de-DE": "Produktnachbestellungen",
+            "en-GB": "Product reorders"
+        },
+        "description": {
+            "de-DE": "Mit der Shopware 6 App Produktnachbestellungen können Sie einzelne Produkte Ihrer vorangegangenen Bestellungen aus Ihrem Kundenkonto heraus nachbestellen.",
+            "en-GB": "With the Shopware 6 app Product reorders you can reorder already ordered products of your previous purchases from your customer account."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://new-data-services.de",
+            "en-GB": "https://new-data-services.de"
+        },
+        "supportLink": {
+            "de-DE": "",
+            "en-GB": ""
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Nds\\ProductReorder\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}
+
