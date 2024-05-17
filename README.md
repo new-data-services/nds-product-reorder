@@ -14,4 +14,4 @@ If a product is marked for "clearance sale" and the stock level drops to zero, t
 
 ## Installation
 
-``composer require nds/product-reorder``
+``composer require ndx/product-reorder``
