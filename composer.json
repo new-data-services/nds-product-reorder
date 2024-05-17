@@ -4,7 +4,7 @@
     "description": "Reorder products from accounts page",
     "version": "66.1.0",
     "type": "shopware-platform-plugin",
-    "license": "GNU General Public License v3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "new-data-services GmbH",
